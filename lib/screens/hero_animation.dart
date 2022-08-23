@@ -13,7 +13,7 @@ class HeroAnimation extends StatelessWidget {
       ),
       body: Center(
         child: PhotoHero(
-          photo: 'images/chair_alpha.png',
+          photo: 'assets/images/chair_alpha.png',
           width: 300.0,
           onTap: () {
             Navigator.of(context).push(
@@ -29,7 +29,7 @@ class HeroAnimation extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       alignment: Alignment.topLeft,
                       child: PhotoHero(
-                        photo: 'images/chair_alpha.png',
+                        photo: 'assets/images/chair_alpha.png',
                         width: 100.0,
                         onTap: () {
                           Navigator.of(context).pop();

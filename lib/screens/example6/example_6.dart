@@ -1,4 +1,4 @@
-import 'dart:math';
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -56,19 +56,25 @@ class MyPainter extends CustomPainter {
     // path.lineTo(size.width / 2, size.height - 20);
     // path.lineTo(20, size.height - 20);
     // path.lineTo(20, size.height / 2);
-    //
+
     // canvas.drawPath(path, paint);
     //lineTo and quadraticBezierTo
 
-    path.lineTo(0, size.height * 0.75);
-    path.quadraticBezierTo(size.width * 0.10, size.height * 0.55,
-        size.width * 0.22, size.height * 0.70);
-    path.quadraticBezierTo(size.width * 0.30, size.height * 0.90,
-        size.width * 0.40, size.height * 0.75);
-    path.quadraticBezierTo(size.width * 0.52, size.height * 0.50,
-        size.width * 0.65, size.height * 0.70);
+    path.lineTo(0, size.height * 0.65);
+
     path.quadraticBezierTo(
-        size.width * 0.75, size.height * 0.85, size.width, size.height * 0.60);
+      size.width * 0.2,
+      size.height * 0.4,
+      size.width * 0.5,
+      size.height * 0.6,
+    );
+
+    path.quadraticBezierTo(
+      size.width * 0.8,
+      size.height * 0.8,
+      size.width,
+      size.height * 0.5,
+    );
     path.lineTo(size.width, 0);
     path.close();
     canvas.drawPath(path, paint);

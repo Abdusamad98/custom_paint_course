@@ -19,7 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
     example5Route,
     example6Route,
     example7Route,
-    testScreen,
+    example8Route,
+    example9Route,
+    example10Route,
   ];
 
   @override
@@ -34,12 +36,25 @@ class _HomeScreenState extends State<HomeScreen> {
             ...List.generate(
               routeNames.length,
               (index) => ListTile(
-                title: Text("Example ${index + 1}"),
+                title: Text("Example ${index}"),
                 onTap: () {
                   Navigator.pushNamed(context, routeNames[index]);
                 },
               ),
             ),
+            ListTile(
+              title: const Text("Hero Animation"),
+              onTap: () {
+                Navigator.pushNamed(context, heroAnimationScreen);
+              },
+            ),
+            ListTile(
+              title: const Text("Test Screen"),
+              onTap: () {
+                Navigator.pushNamed(context, testScreen);
+              },
+            ),
+
             myButton(() {
               Navigator.pushNamed(context, example3Route);
             })
@@ -49,3 +64,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+//https://medium.com/flutter-community/paths-in-flutter-a-visual-guide-6c906464dcd0
