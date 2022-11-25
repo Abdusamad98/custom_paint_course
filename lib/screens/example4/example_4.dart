@@ -35,13 +35,14 @@ class MyPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var rect = const Offset(20, 0) & const Size(120, 120);
     const startAngle = 0.0;
-    const sweepAngle = 1.5*pi/3;
+    const sweepAngle = pi/2;
     const useCenter = true;
     final paint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
-    canvas.drawArc(rect, startAngle, sweepAngle, useCenter, paint);
+
+    canvas.drawArc(rect, startAngle, sweepAngle, true, paint);
   }
 
   @override

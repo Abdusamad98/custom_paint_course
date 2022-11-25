@@ -36,12 +36,12 @@ class MyPainter extends CustomPainter {
     // print(size.width);
     // print(size.height);
     var paint = Paint()
-      ..color = Colors.red
-      ..strokeWidth = 20.0;
+     ..color = Colors.red
+     ..strokeWidth = 4.0;
 
     canvas.drawLine(
-       Offset(size.width/2, size.width/2),//(100,100)
-       Offset(size.width, size.width/2),//(200,100)
+       Offset(100, 100),//(100,100)
+       Offset(200, 100),//(200,100)
       paint,
     );
   }

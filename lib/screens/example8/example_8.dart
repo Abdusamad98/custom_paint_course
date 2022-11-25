@@ -49,15 +49,15 @@ class MyPainter extends CustomPainter {
     path.moveTo(0, size.height / 2);
     path.quadraticBezierTo(
       size.width * 0.5,
-      size.height * 0,
-      size.width * 0.7,
+      size.height * -.5,
+      size.width * 1,
       size.height * 0.5,
     );
     // path.quadraticBezierTo(size.width * 0.75, size.height * 0.9,
     //     size.width * 1.0, size.height * 0.8);
     // path.lineTo(size.width, size.height);
     // path.lineTo(0, size.height);
-    canvas.drawPath(path, paint);
+    // canvas.drawPath(path, paint);
   }
 
   @override

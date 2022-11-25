@@ -46,38 +46,38 @@ class MyPainter extends CustomPainter {
     var paint = Paint()
       ..color = Colors.red
       ..strokeWidth = 10
-      ..style = PaintingStyle.fill
+      ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     var path = Path();
     // moveTo and  lineTo
-    // path.moveTo(20, size.height / 2);
-    // path.lineTo(size.width / 2, size.height / 2);
-    // path.lineTo(size.width / 2, size.height - 20);
-    // path.lineTo(20, size.height - 20);
-    // path.lineTo(20, size.height / 2);
+    path.moveTo(20, size.height / 2);
+    path.lineTo(size.width / 2, size.height / 2);
+    path.lineTo(size.width / 2, size.height - 20);
+    path.lineTo(20, size.height - 20);
+    path.lineTo(20, size.height / 2);
 
-    // canvas.drawPath(path, paint);
+    canvas.drawPath(path, paint);
     //lineTo and quadraticBezierTo
 
-    path.lineTo(0, size.height * 0.65);
-
-    path.quadraticBezierTo(
-      size.width * 0.2,
-      size.height * 0.4,
-      size.width * 0.5,
-      size.height * 0.6,
-    );
-
-    path.quadraticBezierTo(
-      size.width * 0.8,
-      size.height * 0.8,
-      size.width,
-      size.height * 0.5,
-    );
-    path.lineTo(size.width, 0);
-    path.close();
-    canvas.drawPath(path, paint);
+    // path.lineTo(0, size.height * 0.65);
+    //
+    // path.quadraticBezierTo(
+    //   size.width * 0.2,
+    //   size.height * 0.4,
+    //   size.width * 0.5,
+    //   size.height * 0.6,
+    // );
+    //
+    // path.quadraticBezierTo(
+    //   size.width * 0.8,
+    //   size.height * 0.8,
+    //   size.width,
+    //   size.height * 0.5,
+    // );
+    // path.lineTo(size.width, 0);
+    // path.close();
+    // canvas.drawPath(path, paint);
   }
 
   @override

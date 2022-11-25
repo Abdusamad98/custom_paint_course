@@ -38,6 +38,7 @@ class MyPainter extends CustomPainter {
     canvas.drawCircle(Offset(size.width / 2, size.height / 2), 100, paint);
   }
 
+
   //Exercise: Aylanani kvadratga har tomondan urintining!
 
   @override

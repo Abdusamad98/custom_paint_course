@@ -33,7 +33,7 @@ class _Example9State extends State<Example9> {
               const SizedBox(
                 height: 50,
               ),
-              Image.asset("assets/gifs/cubic_to.gif")
+          //    Image.asset("assets/gifs/cubic_to.gif")
             ],
           ),
         ));
@@ -41,8 +41,6 @@ class _Example9State extends State<Example9> {
 }
 
 class MyPainter extends CustomPainter {
-
-
 
 
   @override
@@ -53,16 +51,19 @@ class MyPainter extends CustomPainter {
       ..strokeWidth = 8.0;
 
     Path path = Path();
-
+    //P0
     path.lineTo(0, size.height * 0.5);
 
     path.cubicTo(
-      size.width * 0.6,
-      size.height * 0.1,
+      //P1
       size.width * 0.4,
+      size.height * 0.2,
+      //P2
+      size.width * 0.5,
       size.height * 0.7,
+      //P3
       size.width,
-      size.height * 0.4,
+      size.height * 0.5,
     );
 
     path.lineTo(size.width, 0);

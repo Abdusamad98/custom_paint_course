@@ -46,8 +46,7 @@ class MyPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 10;
     canvas.drawArc(
-      Rect.fromCenter(center: center, width: radius, height: radius),
-      0,
+      Rect.fromCenter(center: center, width: radius, height: radius), 0,
       pi,
       false,
       smilePaint,

@@ -31,18 +31,19 @@ class _Example2State extends State<Example2> {
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // print(size.width);
-    // print(size.height);
-    var paint = Paint()..color = Colors.red;
+    print(size.width);
+    print(size.height);
+    var paint1 = Paint()..color = Colors.red;
+    var paint2 = Paint()..color = Colors.green;
     canvas.drawRect(
-      //const Offset(0, 0) & const Size(150, 150),
-      Rect.fromCenter(center: const Offset(100, 100), width: 50, height: 50),
-      paint,
+      const Offset(0, 0) & const Size(150, 150),
+     // Rect.fromCenter(center:  Offset(size.height/2, size.width/2), width: 50, height: 50),
+      paint1,
     );
     canvas.drawRect(
       //const Offset(0, 0) & const Size(150, 150),
-      Rect.fromCenter(center: const Offset(200, 150), width: 50, height: 50),
-      paint,
+      Rect.fromCenter(center: const Offset(150, 170), width: 50, height: 50),
+      paint2,
     );
   }
 
