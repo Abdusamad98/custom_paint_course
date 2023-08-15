@@ -14,7 +14,7 @@ class _Example9State extends State<Example9> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+       // backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text("drawPath cubicTo"),
         ),
@@ -33,7 +33,7 @@ class _Example9State extends State<Example9> {
               const SizedBox(
                 height: 50,
               ),
-          //    Image.asset("assets/gifs/cubic_to.gif")
+              Image.asset("assets/gifs/cubic_to.gif")
             ],
           ),
         ));
@@ -45,29 +45,34 @@ class MyPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = Colors.red
-      ..style = PaintingStyle.fill
-      ..strokeWidth = 8.0;
+    //canvas.drawPaint(Paint()..color = Colors.blue);
 
-    Path path = Path();
-    //P0
-    path.lineTo(0, size.height * 0.5);
+    /// Translate method shifts the coordinate of the canvas, in this case we are shifting
+    /// the point of origin to the top-center of  the canvas
+    canvas.translate(size.width / 2, 0);
 
-    path.cubicTo(
-      //P1
-      size.width * 0.4,
-      size.height * 0.2,
-      //P2
-      size.width * 0.5,
-      size.height * 0.7,
-      //P3
-      size.width,
-      size.height * 0.5,
-    );
+    final width = size.width / 2;
 
-    path.lineTo(size.width, 0);
-    canvas.drawPath(path, paint);
+    Path bezierPath = Path()
+      ..moveTo(-width, size.height)
+      ..lineTo(-width, size.height * 0.6)
+      ..cubicTo(
+        -width * 0.2,
+        size.height * 0.3,
+        0,
+        size.height * 0.8,
+        width,
+        size.height * 0.6,
+      )
+      ..lineTo(width, size.height);
+
+    final bezierPaint = Paint()
+      ..shader = const LinearGradient(colors: [
+        Colors.green,
+        Colors.greenAccent,
+      ]).createShader(Offset(-width, size.height) & size);
+
+    canvas.drawPath(bezierPath, bezierPaint);
   }
 
   @override

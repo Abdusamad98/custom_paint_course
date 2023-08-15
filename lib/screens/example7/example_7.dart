@@ -20,7 +20,7 @@ class _Example7State extends State<Example7> {
       ),
       body: Center(
         child: Container(
-          color: Colors.white,
+          color: Colors.green,
           child: CustomPaint(
             size: const Size(200, 200),
             painter: MyPainter(),
@@ -46,7 +46,8 @@ class MyPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 10;
     canvas.drawArc(
-      Rect.fromCenter(center: center, width: radius, height: radius), 0,
+      Rect.fromCenter(center: center, width: radius, height: radius),
+      0,
       pi,
       false,
       smilePaint,

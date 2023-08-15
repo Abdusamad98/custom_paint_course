@@ -47,15 +47,15 @@ class MyPainter extends CustomPainter {
       ..color = Colors.red
       ..strokeWidth = 10
       ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
+      ..strokeCap = StrokeCap.square;
 
     var path = Path();
     // moveTo and  lineTo
     path.moveTo(20, size.height / 2);
-    path.lineTo(size.width / 2, size.height / 2);
-    path.lineTo(size.width / 2, size.height - 20);
+   path.lineTo(size.width / 2, size.height / 2);
+   path.lineTo(size.width / 2, size.height - 20);
     path.lineTo(20, size.height - 20);
-    path.lineTo(20, size.height / 2);
+   path.lineTo(20, size.height / 2);
 
     canvas.drawPath(path, paint);
     //lineTo and quadraticBezierTo

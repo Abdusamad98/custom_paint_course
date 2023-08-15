@@ -22,7 +22,7 @@ class _Example4State extends State<Example4> {
           color: Colors.blue,
           child: CustomPaint(
             size: const Size(300, 300),
-            painter: MyPainter(),
+            painter: MyPainter(sweepAngle: 3 * pi / 4),
           ),
         ),
       ),
@@ -31,18 +31,22 @@ class _Example4State extends State<Example4> {
 }
 
 class MyPainter extends CustomPainter {
+  MyPainter({required this.sweepAngle});
+
+  final double sweepAngle;
+
   @override
   void paint(Canvas canvas, Size size) {
-    var rect = const Offset(20, 0) & const Size(120, 120);
+    Rect rect = const Offset(0, 0) & const Size(120, 120);
     const startAngle = 0.0;
-    const sweepAngle = pi/2;
+    // const sweepAngle = sweepAngle;
     const useCenter = true;
     final paint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
-    canvas.drawArc(rect, startAngle, sweepAngle, true, paint);
+    canvas.drawArc(rect, startAngle, sweepAngle, false, paint);
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:custom_paint_course/constatnts/constants.dart';
+import 'package:custom_paint_course/screens/emaple/my_view.dart';
 import 'package:custom_paint_course/screens/hero_animation.dart';
 import 'package:custom_paint_course/screens/home_screen.dart';
 import 'package:custom_paint_course/screens/router.dart';
@@ -19,8 +20,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: MyRouter.generateRoute,
-      initialRoute: homeRoute,
+      home: MyView(),
+      // onGenerateRoute: MyRouter.generateRoute,
+      // initialRoute: homeRoute,
     );
   }
 }

@@ -70,7 +70,7 @@ final midPaint = Paint()
   ..style = PaintingStyle.fill;
 
 const labelStyle = TextStyle(
-  fontSize: 12,
+  fontSize: 16,
   color: Colors.white,
 );
 
@@ -106,7 +106,7 @@ class DonutChartPainter extends CustomPainter {
       canvas.drawCircle(center, radius * 0.3, midPaint);
       // draw text centered
       drawTextCentered(canvas, center, "",
-          const TextStyle(fontSize: 18, color: Colors.black), radius * 0.6);
+          const TextStyle(fontSize: 24, color: Colors.black), radius * 0.6);
       //draw Labels
       drawLabels(
         canvas,

@@ -41,14 +41,13 @@ class MyPainter extends CustomPainter {
       Offset(120, 240),
       Offset(50, 100),
       Offset(200, 75),
-
     ];
     final paint = Paint()
       ..color = Colors.white
-      ..strokeWidth = 16
+      ..strokeWidth = 12
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
-    canvas.drawPoints(PointMode.lines, points, paint);
+    canvas.drawPoints(PointMode.points, points, paint);
   }
 
   @override

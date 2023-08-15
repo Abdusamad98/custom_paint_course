@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class _Example8State extends State<Example8> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                color: Colors.blue,
+                color: Colors.green,
                 child: CustomPaint(
                   size: const Size(300, 300),
                   painter: MyPainter(),
@@ -43,21 +42,20 @@ class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint();
-    paint.color = Colors.yellow;
+    paint.color = Colors.blue;
     paint.strokeWidth = 2.0;
-    Path path = Path();
-    path.moveTo(0, size.height / 2);
+
+    var path = Path();
+
+    path.moveTo(0, size.height * 0.5);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.8,
+        size.width * 0.5, size.height * 0.5);
     path.quadraticBezierTo(
-      size.width * 0.5,
-      size.height * -.5,
-      size.width * 1,
-      size.height * 0.5,
-    );
-    // path.quadraticBezierTo(size.width * 0.75, size.height * 0.9,
-    //     size.width * 1.0, size.height * 0.8);
-    // path.lineTo(size.width, size.height);
-    // path.lineTo(0, size.height);
-    // canvas.drawPath(path, paint);
+        size.width * 0.75, size.height * 0.2, size.width, size.height * 0.5);
+    path.lineTo(size.width, 0);
+    path.lineTo(0, 0);
+
+    canvas.drawPath(path, paint);
   }
 
   @override
